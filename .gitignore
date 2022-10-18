@@ -1,3 +1,5 @@
 .DS_Store
 .idea/
 venv/
+application/application/local_settings.py
+
