@@ -75,13 +75,14 @@ WSGI_APPLICATION = 'application.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+from .local_settings import PASSWORD, USER
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'messanger_db',
-        'USER': 'vk_janko',
-        'PASSWORD': 'pass',
+        'USER': USER,
+        'PASSWORD': PASSWORD,
         'HOST': '127.0.0.1',
         'PORT': 5432,
     }
@@ -131,6 +132,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 try:
-    from .local_settings import *
+    from .local_settings import DEBUG
 except ImportError:
     pass
